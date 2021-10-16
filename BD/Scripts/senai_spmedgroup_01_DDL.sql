@@ -1,0 +1,89 @@
+CREATE DATABASE SPMedicalGroup;
+GO
+
+USE SPMedicalGroup;
+GO
+
+CREATE TABLE Endereco(
+	IdEndereco INT PRIMARY KEY IDENTITY,
+	NomeRua VARCHAR(120) NOT NULL,
+	Numero INT NOT NULL,
+	Bairro VARCHAR(30) NOT NULL,
+	Cidade VARCHAR(40) NOT NULL,
+);
+GO
+
+
+CREATE TABLE Clinica(
+	IdClinica INT PRIMARY KEY IDENTITY,
+	IdEndereco INT FOREIGN KEY REFERENCES Endereco(IdEndereco),
+	NomeClinica VARCHAR(25) UNIQUE NOT NULL,
+	CNPJ CHAR(14) UNIQUE NOT NULL,
+	RazaoVisita VARCHAR(50) UNIQUE NOT NULL,
+	ClinicaAberta TIME NOT NULL,
+	ClinicaFechada TIME NOT NULL
+);
+GO
+
+
+CREATE TABLE TipoUsuario(
+	IdTipoUsuario INT PRIMARY KEY IDENTITY,
+	NomeTipoUsuario VARCHAR(100) UNIQUE NOT NULL
+);
+GO
+
+
+CREATE TABLE Especialidade(
+	IdEspecialidadeMedica INT PRIMARY KEY IDENTITY,
+	TipoEspecialidade VARCHAR(50) UNIQUE NOT NULL
+);
+GO
+
+
+CREATE TABLE Usuario(
+	IdUsuario INT PRIMARY KEY IDENTITY,
+	IdTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(IdTipoUsuario),
+	Email VARCHAR(250) UNIQUE NOT NULL,
+	Senha VARCHAR(25) NOT NULL
+);
+GO
+
+
+CREATE TABLE Paciente(
+	IdPaciente INT PRIMARY KEY IDENTITY,
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario),
+	IdEndereco INT FOREIGN KEY REFERENCES Endereco(IdEndereco),
+	NomePaciente VARCHAR(20) NOT NULL,
+	DataNascimento DATE NOT NULL,
+	Telefone VARCHAR(14) UNIQUE,
+	RG CHAR(9) UNIQUE NOT NULL,
+);
+GO
+
+
+CREATE TABLE Medico(
+	IdMedico INT PRIMARY KEY IDENTITY,
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario),
+	IdClinica INT FOREIGN KEY REFERENCES Clinica(IdClinica),
+	IdEspecialidadeMedica INT FOREIGN KEY REFERENCES Especialidade(IdEspecialidadeMedica),
+	NomeMedico VARCHAR(20) NOT NULL,
+);
+GO
+
+
+CREATE TABLE SituacaoPaciente(
+	IdSituacaoPaciente INT PRIMARY KEY IDENTITY,
+	Avaliacao VARCHAR(300) UNIQUE NOT NULL
+);
+GO
+
+
+CREATE TABLE Consulta(
+	IdConsulta INT PRIMARY KEY IDENTITY,
+	IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente),
+	IdMedico INT FOREIGN KEY REFERENCES Medico(IdMedico),
+	IdSituacaoPaciente INT FOREIGN KEY REFERENCES SituacaoPaciente(IdSituacaoPaciente),
+	DataConsulta DATETIME NOT NULL,
+	DescricaoConsulta VARCHAR(500),
+);
+GO
