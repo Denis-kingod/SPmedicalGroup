@@ -26,8 +26,8 @@ GO
 
 
 INSERT INTO Usuario(IdTipoUsuario, Email, Senha)
-VALUES (2,'sherlok.holmes@spmedicalgroup.com.br', '12345'),(2,'Saulo.Andrade@spmedicalgroup.com.br', '123456'),(2,'SantaMaria@spmedicalgroup.com.br','1234567'),
-(3,'Kethelin@gmail.com','Kethelin123'),(3,'denis@gmail.com','denis123'),(3,'Cardoso@gmail.com','Cardosin123')
+VALUES (3,'sherlok.holmes@spmedicalgroup.com.br', '12345'),(3,'Saulo.Andrade@spmedicalgroup.com.br', '123456'),(3,'SantaMaria@spmedicalgroup.com.br','1234567'),
+(2,'Kethelin@gmail.com','Kethelin123'),(1,'denis@gmail.com','denis123'),(2,'Cardoso@gmail.com','Cardosin123')
 GO
 
 INSERT INTO Paciente(IdUsuario,IdEndereco,NomePaciente,DataNascimento, Telefone, RG)
@@ -50,12 +50,17 @@ GO
 
 
 INSERT INTO Consulta(IdPaciente, IdMedico, IdSituacaoPaciente, DataConsulta, DescricaoConsulta)
-VALUES (5, 3, 1, '20210610 06:00:00 AM' , null),
-(6, 4, 3, '20210610 12:00:00 PM', 'Nao compareceu a clinica'),
-(7, 5, 2, '20210610 13:00:00 PM', null)
+VALUES (1, 3, 1, '20210610 06:00:00 AM' , null),
+(2, 4, 3, '20210610 12:00:00 PM', 'Nao compareceu a clinica'),
+(3, 5, 2, '20210610 13:00:00 PM', null)
 GO
 
-SELECT * FROM Clinica
-SELECT * FROM Paciente
-SELECT * FROM medico
-SELECT * FROM SituacaoPaciente
+SELECT * FROM Endereco;
+SELECT * FROM Clinica;
+SELECT * FROM TipoUsuario;
+SELECT * FROM Especialidade
+SELECT * FROM Usuario 
+SELECT * FROM Paciente;
+SELECT * FROM Medico;
+SELECT * FROM SituacaoPaciente;
+SELECT * FROM Consulta;
