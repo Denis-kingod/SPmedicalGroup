@@ -15,13 +15,12 @@ namespace spmedical.Repositories
         {
             Paciente pacienteBuscado = BuscarPorId(idPaciente);
               
-            if (pacienteAtualizado.IdUsuario != null && pacienteAtualizado.IdEndereco != null && pacienteAtualizado.NomePaciente != null  && pacienteAtualizado.Telefone != null && pacienteAtualizado.Rg != null)
+            if (pacienteAtualizado.IdUsuario != null && pacienteAtualizado.IdEndereco != null && pacienteAtualizado.NomePaciente != null  && pacienteAtualizado.Rg != null)
             {
                 pacienteBuscado.IdUsuario = pacienteAtualizado.IdUsuario;
                 pacienteBuscado.IdEndereco = pacienteAtualizado.IdEndereco;
                 pacienteBuscado.NomePaciente = pacienteAtualizado.NomePaciente;
                 pacienteBuscado.DataNascimento = pacienteAtualizado.DataNascimento;
-                pacienteBuscado.Telefone = pacienteAtualizado.Telefone;
                 pacienteBuscado.Rg = pacienteAtualizado.Rg;
             }
             else

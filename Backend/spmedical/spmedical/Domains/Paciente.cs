@@ -17,7 +17,6 @@ namespace spmedical.Domains
         public int? IdEndereco { get; set; }
         public string NomePaciente { get; set; }
         public DateTime DataNascimento { get; set; }
-        public string Telefone { get; set; }
         public string Rg { get; set; }
 
         public virtual Endereco IdEnderecoNavigation { get; set; }

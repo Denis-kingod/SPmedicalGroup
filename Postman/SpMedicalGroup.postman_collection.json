@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "d58d35b2-eaef-4705-8b36-f13b0f6c8cd3",
+		"name": "SpMedicalGroup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login Token - ADM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"denis@gmail.com\",\r\n    \"senha\" : \"denis123\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Token - Medico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\" : \"sherlok.holmes@spmedicalgroup.com.br\",\r\n    \"Senha\" : \"12345\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Token - Paciente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\" : \"Kethelin@gmail.com\",\r\n    \"Senha\" : \"Kethelin123\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Todas Token Adm",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbmlzQGdtYWlsLmNvbSIsImp0aSI6IjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwicm9sZSI6IjMiLCJuYW1lVXNlciI6ImRlbmlzQGdtYWlsLmNvbSIsImV4cCI6MTYzNzA2ODM3NywiaXNzIjoiTWVkR3J1cC53ZWJBcGkiLCJhdWQiOiJNZWRHcnVwLndlYkFwaSJ9.xGsZwt20yDO_hfDVv3FnGtz_SZI03ZKIChMxJMS0ilo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Consulta/ListarTodas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Consulta",
+						"ListarTodas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UsuarioPossui Token Adm",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbmlzQGdtYWlsLmNvbSIsImp0aSI6IjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwicm9sZSI6IjMiLCJuYW1lVXNlciI6ImRlbmlzQGdtYWlsLmNvbSIsImV4cCI6MTYzNzA2ODM3NywiaXNzIjoiTWVkR3J1cC53ZWJBcGkiLCJhdWQiOiJNZWRHcnVwLndlYkFwaSJ9.xGsZwt20yDO_hfDVv3FnGtz_SZI03ZKIChMxJMS0ilo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/UsuarioPossui",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"UsuarioPossui"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta - Token Medico",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNoZXJsb2suaG9sbWVzQHNwbWVkaWNhbGdyb3VwLmNvbS5iciIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwicm9sZSI6IjEiLCJuYW1lVXNlciI6InNoZXJsb2suaG9sbWVzQHNwbWVkaWNhbGdyb3VwLmNvbS5iciIsImV4cCI6MTYzNzA2ODcxOSwiaXNzIjoiTWVkR3J1cC53ZWJBcGkiLCJhdWQiOiJNZWRHcnVwLndlYkFwaSJ9.GvrB15p7BZHbSTROt-MqoZz9QDIjWNyTR7h-gkLYsZ8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Consulta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Consulta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Paciente",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IktldGhlbGluQGdtYWlsLmNvbSIsImp0aSI6IjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIyIiwicm9sZSI6IjIiLCJuYW1lVXNlciI6IktldGhlbGluQGdtYWlsLmNvbSIsImV4cCI6MTYzNzA2ODUyMCwiaXNzIjoiTWVkR3J1cC53ZWJBcGkiLCJhdWQiOiJNZWRHcnVwLndlYkFwaSJ9.9QcyaXcuvZhWwUTRzErPuXBSOco7hm5YYmSZHQ2_t0E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Paciente/ListarTudo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Paciente",
+						"ListarTudo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MedicoConsulta - Token Medico",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNoZXJsb2suaG9sbWVzQHNwbWVkaWNhbGdyb3VwLmNvbS5iciIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwicm9sZSI6IjEiLCJuYW1lVXNlciI6InNoZXJsb2suaG9sbWVzQHNwbWVkaWNhbGdyb3VwLmNvbS5iciIsImV4cCI6MTYzNzA2ODcxOSwiaXNzIjoiTWVkR3J1cC53ZWJBcGkiLCJhdWQiOiJNZWRHcnVwLndlYkFwaSJ9.GvrB15p7BZHbSTROt-MqoZz9QDIjWNyTR7h-gkLYsZ8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Consulta/MedicoConsultas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Consulta",
+						"MedicoConsultas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clinicas - Token Adm",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbmFpYXBpQDEzMiIsImp0aSI6IjYiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiI2Iiwicm9sZSI6IjIiLCJuYW1lVXNlciI6InNlbmFpYXBpQDEzMiIsImV4cCI6MTYzMjk0MTkyNywiaXNzIjoiTWVkR3J1cC53ZWJBcGkiLCJhdWQiOiJNZWRHcnVwLndlYkFwaSJ9.j1HFz_5bnUcchsNSDGo1BF_lR2tHb63R3_xoTQpl2ys",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Clinicas/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Clinicas",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

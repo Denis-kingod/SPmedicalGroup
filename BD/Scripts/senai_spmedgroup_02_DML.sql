@@ -8,8 +8,7 @@ GO
 
 
 INSERT INTO Clinica(IdEndereco, NomeClinica ,CNPJ, RazaoVisita, ClinicaAberta, ClinicaFechada)
-VALUES (1,'Clinica Medica', '12345678910121', 
-'Ajuda Medica', '05:00:00', '18:00:00');
+VALUES (1,'Clinica Medica', '12345678910121', 'Ajuda Medica', '05:00:00', '18:00:00');
 GO
 
 
@@ -26,21 +25,19 @@ GO
 
 
 INSERT INTO Usuario(IdTipoUsuario, Email, Senha)
-VALUES (3,'sherlok.holmes@spmedicalgroup.com.br', '12345'),(3,'Saulo.Andrade@spmedicalgroup.com.br', '123456'),(3,'SantaMaria@spmedicalgroup.com.br','1234567'),
-(2,'Kethelin@gmail.com','Kethelin123'),(1,'denis@gmail.com','denis123'),(2,'Cardoso@gmail.com','Cardosin123')
+VALUES (2,'sherlok.holmes@spmedicalgroup.com.br', '12345'),
+       (3,'Kethelin@gmail.com','Kethelin123'),
+       (1,'denis@gmail.com','denis123');
 GO
 
-INSERT INTO Paciente(IdUsuario,IdEndereco,NomePaciente,DataNascimento, Telefone, RG)
-VALUES (4, 1,'Kethelin', '11-09-2000', '+5511981568091', '198156809'),
-(5,1, 'Denis', '11-09-2000', '+5511981568090','326543457'),
-(6, 1, 'Cardoso', '11-09-2000', '+5511981568092',	'546365253')
+INSERT INTO Paciente(IdUsuario,IdEndereco,NomePaciente,DataNascimento,RG)
+VALUES (3, 1,'Kethelin', '11-09-2000', '198156809'),
+(1,1, 'Denis', '11-09-2000','326543457');
 GO
 
 
 INSERT INTO Medico(IdUsuario, IdClinica, IdEspecialidadeMedica, NomeMedico)
-VALUES (1, 4, 2, 'Sherlok'),
-(2, 4, 1,	'Roberto'),
-(3, 4, 8,	'Helena')
+VALUES (2, 1, 2, 'Sherlok');
 GO
 
 
@@ -50,9 +47,7 @@ GO
 
 
 INSERT INTO Consulta(IdPaciente, IdMedico, IdSituacaoPaciente, DataConsulta, DescricaoConsulta)
-VALUES (1, 3, 1, '20210610 06:00:00 AM' , null),
-(2, 4, 3, '20210610 12:00:00 PM', 'Nao compareceu a clinica'),
-(3, 5, 2, '20210610 13:00:00 PM', null)
+VALUES (3, 1, 1, '20210610 06:00:00 AM' , null);
 GO
 
 SELECT * FROM Endereco;
