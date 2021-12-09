@@ -51,7 +51,7 @@ export default class Listar extends Component {
                 
                     <View style={styles.main}>
                         <Image
-                            source={require('../../assets/img/logo.png')}
+                            source={require('../../Assets/img/Logo.png')}
                             style={styles.mainImgLogin}
                         />
                         <View style={styles.Container}>

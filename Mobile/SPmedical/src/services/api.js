@@ -5,7 +5,7 @@ import axios from 'axios';
 const api = axios.create({
   // define a URL base das requisições
   // baseURL: 'http://192.168.1.11:5000/api',
-  baseURL: 'http://192.168.3.240:5000/api',
+  baseURL: 'http://192.168.6.4:5000/api',
 });
 
 // define o padrão de exportação
