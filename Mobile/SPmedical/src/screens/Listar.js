@@ -23,8 +23,9 @@ export default class Listar extends Component {
 
     buscarConsultas = async () => {
         try {
+            console.warn(token)
             const token = await AsyncStorage.getItem('userToken');
-            const resposta = await api.get('/consulta/minhas', {
+            const resposta = await api.get('/consulta/', {
                 headers: {
                     Authorization: 'Bearer ' + token,
                 },

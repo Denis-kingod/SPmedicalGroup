@@ -11,7 +11,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const bottomTab = createBottomTabNavigator();
 
 
-// import Perfil from '../screens/Perfil';
+import Perfil from '../screens/Perfil';
 import Listar from './Listar';
 
 
@@ -83,7 +83,7 @@ export default class Main extends Component {
                     })}>
 
                     <bottomTab.Screen name="Listar" component={Listar} />
-                    {/* <bottomTab.Screen name="Perfil" component={Perfil} /> */}
+                    <bottomTab.Screen name="Perfil" component={Perfil} />
 
                 </bottomTab.Navigator>
 
