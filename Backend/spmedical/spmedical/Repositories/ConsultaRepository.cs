@@ -49,17 +49,82 @@ namespace spmedical.Repositories
 
         public List<Consultum> ListarMinhas(int idUsuario)
         {
-            return ctx.Consulta.ToList();
+            return ctx.Consulta
+              .Select(c => new Consultum
+              {
+                  IdConsulta = c.IdConsulta,
+                  DataConsulta = c.DataConsulta,
+                  DescricaoConsulta = c.DescricaoConsulta,
+                  IdPacienteNavigation = new Paciente
+                  {
+                      IdUsuario = c.IdPacienteNavigation.IdUsuario,
+                      IdPaciente = c.IdPacienteNavigation.IdPaciente,
+                      NomePaciente = c.IdPacienteNavigation.NomePaciente,
+                      DataNascimento = c.IdPacienteNavigation.DataNascimento,
+                      Rg = c.IdPacienteNavigation.Rg,
+                  },
+                  IdMedicoNavigation = new Medico
+                  {
+                      IdUsuario = c.IdMedicoNavigation.IdUsuario,
+                      IdMedico = c.IdMedicoNavigation.IdMedico,
+                      NomeMedico = c.IdMedicoNavigation.NomeMedico,
+                      IdEspecialidadeMedicaNavigation = new Especialidade
+                      {
+                          IdEspecialidadeMedica = c.IdMedicoNavigation.IdEspecialidadeMedicaNavigation.IdEspecialidadeMedica
+                      },
+                  },
+                  IdSituacaoPacienteNavigation = new SituacaoPaciente
+                  {
+                      IdSituacaoPaciente = c.IdSituacaoPacienteNavigation.IdSituacaoPaciente,
+                      Avaliacao = c.IdSituacaoPacienteNavigation.Avaliacao
+                  }
+              })
+                .Where(c => c.IdMedicoNavigation.IdUsuario == idUsuario || c.IdPacienteNavigation.IdUsuario == idUsuario)
+                .ToList();
         }
 
         public List<Consultum> ListarTodas()
         {
             return ctx.Consulta
-            .Include(e => e.IdPacienteNavigation)
-            .Include(e => e.IdMedicoNavigation)
-            .Include(e => e.IdSituacaoPacienteNavigation)
-            .ToList();
-        }
+                .Select(c => new Consultum()
+                {
+                    IdConsulta = c.IdConsulta,
+                    IdMedico = c.IdMedico,
+                    IdSituacaoPaciente = c.IdSituacaoPaciente,
+                    IdPaciente = c.IdPaciente,
+                    DataConsulta = c.DataConsulta,
+                    DescricaoConsulta = c.DescricaoConsulta,
+                    IdPacienteNavigation = new Paciente
+                    {
+                        IdPaciente = c.IdPacienteNavigation.IdPaciente,
+                        NomePaciente = c.IdPacienteNavigation.NomePaciente,
+                        DataNascimento = c.IdPacienteNavigation.DataNascimento,
+                        Rg = c.IdPacienteNavigation.Rg,
+                    },
+                    IdMedicoNavigation = new Medico
+                    {
+                        IdMedico = c.IdMedicoNavigation.IdMedico,
+                        NomeMedico = c.IdMedicoNavigation.NomeMedico,
+                        IdEspecialidadeMedicaNavigation = new Especialidade
+                        {
+                            IdEspecialidadeMedica = c.IdMedicoNavigation.IdEspecialidadeMedicaNavigation.IdEspecialidadeMedica
+                        },
 
+                        IdClinicaNavigation = new Clinica
+                        {
+                            IdClinica = c.IdMedicoNavigation.IdClinicaNavigation.IdClinica,
+                            Cnpj = c.IdMedicoNavigation.IdClinicaNavigation.Cnpj,
+                            NomeClinica = c.IdMedicoNavigation.IdClinicaNavigation.NomeClinica,
+                            RazaoVisita = c.IdMedicoNavigation.IdClinicaNavigation.RazaoVisita
+                        }
+                    },
+                    IdSituacaoPacienteNavigation = new SituacaoPaciente
+                    {
+                        IdSituacaoPaciente = c.IdSituacaoPacienteNavigation.IdSituacaoPaciente,
+                        Avaliacao = c.IdSituacaoPacienteNavigation.Avaliacao
+                    }
+                })
+                .ToList();
+        }
     }
 }

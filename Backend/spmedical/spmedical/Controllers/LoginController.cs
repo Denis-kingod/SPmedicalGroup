@@ -43,13 +43,13 @@ namespace senai_SpMed_webAPI.Controllers
                     new Claim("role", usuarioBuscado.IdUsuario.ToString()),
                     new Claim("nameUser", usuarioBuscado.Email)
                 };
-                var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Medical-chave-autenticacao"));
+                var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("spmedical-chave-autenticacao"));
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
                 var token = new JwtSecurityToken
                     (
-                        issuer: "MedGrup.webApi",
-                        audience: "MedGrup.webApi",
+                        issuer: "spmedical.webApi",
+                        audience: "spmedical.webApi",
                         claims: Claims,
                         expires: DateTime.Now.AddMinutes(30),
                         signingCredentials: creds

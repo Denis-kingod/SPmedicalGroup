@@ -24,7 +24,7 @@ namespace spmedical.Controllers
             _clinicaRepository = new ClinicaRepository();
         }
 
-        [Authorize(Roles = "2")]
+        [Authorize(Roles = "1")]
         [HttpGet]
         public IActionResult ListarTodas()
         {

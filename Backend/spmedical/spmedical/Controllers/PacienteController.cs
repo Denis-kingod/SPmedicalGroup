@@ -23,9 +23,9 @@ namespace senai_SpMed_webAPI.Controllers
             Pac = new PacienteRepository();
         }
 
-  
 
-        //[Authorize(Roles = "3")]
+
+        [Authorize(Roles = "1")]
         [HttpGet("ListarTudo")]
         public IActionResult ListarTodos()
         {
