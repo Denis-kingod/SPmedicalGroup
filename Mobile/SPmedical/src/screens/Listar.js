@@ -25,7 +25,7 @@ export default class Listar extends Component {
         try {
             console.warn(token)
             const token = await AsyncStorage.getItem('userToken');
-            const resposta = await api.get('/consulta/', {
+            const resposta = await api.get('/Consulta/Minhas', {
                 headers: {
                     Authorization: 'Bearer ' + token,
                 },
@@ -89,32 +89,26 @@ export default class Listar extends Component {
                                 hour12: true                                                
                             }).format(new Date(item.dataConsulta))}</Text>
                 <Text style={styles.ListagemTitulo}>Descrição</Text>
-                <Text style={styles.ListagemDados}>{item.descricao}</Text>
-                <Text style={styles.ListagemTitulo}>Situação</Text>
-                <Text style={styles.ListagemDados}>{item.idSituacaoNavigation.situacao1}</Text>
+                <Text style={styles.ListagemDados}>{item.descricaoConsulta}</Text>
+                <Text style={styles.ListagemTitulo}>Avaliacao</Text>
+                <Text style={styles.ListagemDados}>{item.idSituacaoPacienteNavigation.avaliacao}</Text>
 
                 <Text style={styles.ListagemNome}>PACIENTE</Text>
                 <Text style={styles.ListagemTitulo}>Nome</Text>
                 <Text style={styles.ListagemDados}>{item.idPacienteNavigation.nomePaciente}</Text>
                 <Text style={styles.ListagemTitulo}>RG</Text>
                 <Text style={styles.ListagemDados}>{item.idPacienteNavigation.rg}</Text>
-                <Text style={styles.ListagemTitulo}>CPF</Text>
-                <Text style={styles.ListagemDados}>{item.idPacienteNavigation.cpf}</Text>
                 <Text style={styles.ListagemTitulo}>Data Nascimento</Text>
                 <Text style={styles.ListagemDados}>{Intl.DateTimeFormat("pt-BR", {
                                             year: 'numeric', month: 'short', day: 'numeric',
 
-                                        }).format(new Date(item.idPacienteNavigation.dataNasc))}</Text>
-                <Text style={styles.ListagemTitulo}>Telefone</Text>
-                <Text style={styles.ListagemDados}>{item.idPacienteNavigation.telefone}</Text>
+                                        }).format(new Date(item.idPacienteNavigation.dataNascimento))}</Text>
 
                 <Text style={styles.ListagemNome}>MÉDICO</Text>
                 <Text style={styles.ListagemTitulo}>Nome</Text>
-                <Text style={styles.ListagemDados}>{item.idMedicoNavigation.nomeMed}</Text>
-                <Text style={styles.ListagemTitulo}>CRM</Text>
-                <Text style={styles.ListagemDados}>{item.idMedicoNavigation.crm}</Text>
-                <Text style={styles.ListagemTitulo}>Especialidade</Text>
-                <Text style={styles.ListagemDados}>{item.idMedicoNavigation.idEspecialidadeNavigation.tituloEspecialidade}</Text>
+                <Text style={styles.ListagemDados}>{item.idMedicoNavigation.nomeMedico}</Text>
+                <Text style={styles.ListagemTitulo}>Especialidade Medica</Text>
+                <Text style={styles.ListagemDados}>{item.idMedicoNavigation.idEspecialidadeMedicaNavigation.idEspecialidadeMedica}</Text>
 
                 
             </View>

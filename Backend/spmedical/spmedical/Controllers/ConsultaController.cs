@@ -26,7 +26,7 @@ namespace spmedical.Controllers
 
  
 
-        [Authorize(Roles = "2")]
+        [Authorize(Roles = "1")]
         [HttpGet("ListarTodas")]
         public IActionResult ListarTodas()
         {
@@ -39,8 +39,23 @@ namespace spmedical.Controllers
                 return BadRequest(ex);
             }
         }
+        [Authorize(Roles = "2,3")]
+        [HttpGet("Minhas")]
+        public IActionResult ListarMinhas()
+        {
+            try
+            {
+                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
 
-        [Authorize(Roles = "3")]
+                return Ok(Con.ListarMinhas(idUsuario));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [Authorize(Roles = "1")]
         [HttpGet("{id}")]
         public IActionResult BuscarId(int id)
         {
@@ -54,7 +69,7 @@ namespace spmedical.Controllers
             }
         }
 
-        [Authorize(Roles = "2")]
+        [Authorize(Roles = "1,2")]
         [HttpPost]
         public IActionResult NovoCon(Consultum NovoCon)
         {
@@ -69,7 +84,7 @@ namespace spmedical.Controllers
             }
         }
 
-        [Authorize(Roles = "2")]
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id, Consultum idConsulta)
         {
@@ -84,7 +99,7 @@ namespace spmedical.Controllers
             }
         }
 
-        [Authorize(Roles = "2")]
+        [Authorize(Roles = "1,2")]
         [HttpPut("{id}")]
         public IActionResult AtualizarDados(int id, Consultum NovaCon)
         {

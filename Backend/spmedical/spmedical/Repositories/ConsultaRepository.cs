@@ -70,7 +70,8 @@ namespace spmedical.Repositories
                       NomeMedico = c.IdMedicoNavigation.NomeMedico,
                       IdEspecialidadeMedicaNavigation = new Especialidade
                       {
-                          IdEspecialidadeMedica = c.IdMedicoNavigation.IdEspecialidadeMedicaNavigation.IdEspecialidadeMedica
+                          IdEspecialidadeMedica = c.IdMedicoNavigation.IdEspecialidadeMedicaNavigation.IdEspecialidadeMedica,
+                          TipoEspecialidade = c.IdMedicoNavigation.IdEspecialidadeMedicaNavigation.TipoEspecialidade
                       },
                   },
                   IdSituacaoPacienteNavigation = new SituacaoPaciente

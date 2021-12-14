@@ -95,7 +95,8 @@ const styles = StyleSheet.create({
   // conteúdo da main
   main: {
     flex: 1,
-    backgroundColor: 'rgba(109, 175, 236, 1)',
+    backgroundColor: 'rgba(19, 89, 154, 1)'
+
   },
   // cabeçalho
   mainHeader: {

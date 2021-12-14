@@ -282,6 +282,172 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "http://192.168.6.4:5000/api/Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"denis@gmail.com\",\r\n    \"senha\": \"denis123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.6.4:5000/api/Login",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"6",
+						"4"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://192.168.6.4:5000/api/Paciente/ListarTudo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbmlzQGdtYWlsLmNvbSIsImp0aSI6IjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwicm9sZSI6IjEiLCJuYW1lVXNlciI6ImRlbmlzQGdtYWlsLmNvbSIsImV4cCI6MTYzOTQ4MzE0NywiaXNzIjoic3BtZWRpY2FsLndlYkFwaSIsImF1ZCI6InNwbWVkaWNhbC53ZWJBcGkifQ.eG2mk62w4FwOONU25-BBmAgHVk-r__pCfOdCgUQCc1Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.6.4:5000/api/Paciente/ListarTudo",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"6",
+						"4"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Paciente",
+						"ListarTudo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://192.168.6.4:5000/api/Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"Kethelin@gmail.com \",\r\n    \"senha\": \"Kethelin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.6.4:5000/api/Login",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"6",
+						"4"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://192.168.6.4:5000/api/Consulta/ListarTodas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbmlzQGdtYWlsLmNvbSIsImp0aSI6IjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwicm9sZSI6IjEiLCJuYW1lVXNlciI6ImRlbmlzQGdtYWlsLmNvbSIsImV4cCI6MTYzOTQ4MzQ1NywiaXNzIjoic3BtZWRpY2FsLndlYkFwaSIsImF1ZCI6InNwbWVkaWNhbC53ZWJBcGkifQ.Q5NdXXnWjfKOnpNdEK5jjg8rl-JD3yBbRUUZ9HCxyzY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.6.4:5000/api/Consulta/ListarTodas",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"6",
+						"4"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Consulta",
+						"ListarTodas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://192.168.6.4:5000/api/Consulta/Minhas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IktldGhlbGluQGdtYWlsLmNvbSIsImp0aSI6IjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwicm9sZSI6IjMiLCJuYW1lVXNlciI6IktldGhlbGluQGdtYWlsLmNvbSIsImV4cCI6MTYzOTQ5MDcyMiwiaXNzIjoic3BtZWRpY2FsLndlYkFwaSIsImF1ZCI6InNwbWVkaWNhbC53ZWJBcGkifQ.xBX6wErb6kCK0Vpied_ccSGiOqkQxsIHV48xLFBrWBw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.6.4:5000/api/Consulta/Minhas",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"6",
+						"4"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Consulta",
+						"Minhas"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
