@@ -37,8 +37,10 @@ GO
 
 
 INSERT INTO Medico(IdUsuario, IdClinica, IdEspecialidadeMedica, NomeMedico)
-VALUES (2, 1, 2, 'Sherlok');
+VALUES (1, 1, 2, 'Sherlok');
 GO
+
+TRUNCATE TABLE medico
 
 
 INSERT INTO SituacaoPaciente(Avaliacao)
