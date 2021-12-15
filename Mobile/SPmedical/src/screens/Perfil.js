@@ -71,7 +71,7 @@ export default class Perfil extends Component {
             {/* <View style={styles.mainBodyImg} /> */}
             
               <Image
-                source={require('../../Assets/img/profile2x.png')}
+                source={require('../../Assets/img/Profile2x.png')}
                 // style={styles.mainBodyImg}
               />
         

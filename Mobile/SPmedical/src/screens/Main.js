@@ -62,14 +62,14 @@ export default class Main extends Component {
                             }
 
                             
-                        //     if (route.name === 'Perfil') {
-                        //         return (
-                        //             <Image
-                        //                 source={require('../../Assets/img/profile.png')}
-                        //                 style={styles.tabBarIcon}
-                        //             />
-                        //         )
-                        //     }
+                            if (route.name === 'Perfil') {
+                                return (
+                                    <Image
+                                        source={require('../../Assets/img/profile.png')}
+                                        style={styles.tabBarIcon}
+                                    />
+                                )
+                            }
                         },
 
                         // React Navigation 6.x
