@@ -1,5 +1,7 @@
+import '../../assets/css/Header.css'
 import '../../assets/css/Home.css'
 import '../../assets/css/Footer.css'
+import Footer from '../../Components/Footer'
 import Header from '../../Components/Header';
 
 
@@ -12,7 +14,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <Header Login="Login" Props={this.props} />
+                <Header/>
 
                 <main>
                     <section class="container_participar">
@@ -29,7 +31,7 @@ export default class Home extends Component {
                     </section>
                 </main>
 
-                <footer/>
+                <Footer/>
             </div>
         )
     };
